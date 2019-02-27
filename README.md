@@ -1,4 +1,5 @@
-﻿
+
 ﻿# ProgramacaoII
-eu não sei programar yo stoy cansadita só sei que nada sei
+eu não sei programar
+só sei que nada sei
 
