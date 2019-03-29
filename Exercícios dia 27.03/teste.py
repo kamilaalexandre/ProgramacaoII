@@ -35,8 +35,8 @@ def incluir_pessoa():
 def excluir():
     achou = None
     nome = request.args.get("nome")
-    for p in range(lista):
-        if p.nome == nome:
+    for p in lista:
+        if p[0] == nome:
             achou = p
             break
     if achou != None: 
