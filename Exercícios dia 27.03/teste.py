@@ -31,5 +31,17 @@ def incluir_pessoa():
     lista.append(nova)
     return render_template('exibir_mensagem.html', lista = lista)
 
+@app.route("/excluir_pessoa")
+def excluir():
+    achou = None
+    nome = request.args.get("nome")
+    for p in range(lista):
+        if p.nome == nome:
+            achou = p
+            break
+    if achou != None: 
+        lista.remove(achou)
+    return render_template('exibir_mensagem.html', lista = lista)    
+
 if __name__ == "__main__":
-    app.run(use_reloader = True)
+    app.run(use_reloader = True, debug = True)
