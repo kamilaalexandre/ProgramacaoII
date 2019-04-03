@@ -1,0 +1,11 @@
+<html> 
+    <body>
+        <a href = "/"> <h1> Voltar para a página anterior </h1> </a>
+        <br>
+        <h1> Pessoas </h1>
+        {% for p in lista: %}
+        <h3> {{p}} <a href = "/excluir_pessoa?nome={{p[0]}}"> x </a> </h3>
+        {% endfor %}
+
+    </body>
+</html>

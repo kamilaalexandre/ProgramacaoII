@@ -1,0 +1,31 @@
+<html>
+    <body>
+    <hr>
+    <h1 style = "color = blue"> Página Inicial </h1>
+    <br>
+    <form action = /incluir_pessoa>
+        Nome: <input type = text name = nome>
+    <br>
+        Endereço: <textarea name = endereco> </textarea>
+    <br>
+        Telefone: <input type = text name = telefone>
+
+        <input type = submit value = Incluir> 
+
+        <h2> {{Nome}}</h2>
+        </form>
+        <br>
+
+        <form action = exibir_mensagem> Pessoa a ser removida: <input type = text>
+        <input type = submit value = Remover>
+        </form>
+        <br>
+
+        <form action = exibir_mensagem> 
+        Nome anterior da pessoa: <input type = text > 
+        Nome novo da pessoa: <input type = text> 
+        </form>
+
+        <a href = /listar_pessoas> Listar </a>
+    </body>
+</html>
