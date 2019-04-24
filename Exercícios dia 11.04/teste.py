@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect
 app = Flask(__name__, static_url_path='/static')
+app.config["SECRET_KEY"] = "Meneghim"
 
 lista = [("Joao","Rua 9", "3322-5152"),
          ("Maria","Rua 11", "99982-7080"),
          ("Eugenia", "Rua 13", "3028-5612")]
-@app.route("/", methods=['POST','GET'])
+@app.route("/")
 def inicio():
     return render_template("inicio.html", lista = lista)
 
@@ -38,7 +39,7 @@ def excluir():
         if p[0] == nome:
             achou = p
             break
-    if achou != None: 
+    if achou != None and session["usuario"]: 
         lista.remove(achou)
     return render_template('exibir_mensagem.html', lista = lista)    
 
@@ -50,6 +51,21 @@ def form_altera_pessoa():
             return render_template("form_alterar_pessoa.html")
             informacoes = pe 
     return "não achei: " +procurado
+
+@app.route("/login")
+def login():
+    login = request.args.get("login")
+    senha = request.args.get("senha")
+    if login == "dudu" and senha == "123":
+        session["usuario"] = login
+        return redirect("/")
+    else:
+        return ("login/senha inválidos!")
+
+@app.route("/logout")
+def logout():
+    session.pop("usuario")
+    redirect("/")
 
 if __name__ == "__main__":
     app.run(use_reloader = True, debug = True)
