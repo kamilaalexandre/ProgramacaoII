@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <title>Receitas da Valquíria</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <h1>RECEITAS SALGADAS DA VALQUÍRIA</h1>
+
+    {%for receita in lista:%}
+        <a href='/listar_receita?nome={{receita.nome}}'>{{receita.nome}}</a>        
+        <br>
+    {%endfor%}
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <title>Receitas da Valquíria</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <h1>RECEITAS DA VALQUÍRIA</h1>
+
+    <h1>CADASTRE SUA RECEITA!</h1>
+    <br>
+    <br>
+    <br>
+    <div>  
+        <form action="/cadastrar" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <br>
+            <label for="tipo">Doce ou Salgado:</label>
+            <input type="text" id="tipo" name="tipo">
+            <br>
+            <label for="qtd">Quantidade de Porções por Pessoa:</label>
+            <input type="text" id="qtd" name="qtd">
+            <br>
+            {%for i in range(9):%}
+            <label for="ingrum">Ingrediente {{i + 1}}:</label>
+            <input type="text" id="ingrum" name="ingrum{{i+1}}">
+	        <br>
+            <label for="qtd_ing">Quantidade do Ingrediente:</label>
+            <input type="text" id="qtd_ing" name="qtd_ing">
+            <br>
+            {%endfor%}
+            <br>
+        </form>              
+            <br>
+            <input type="submit" value="Salvar">
+</body>
+</html>
